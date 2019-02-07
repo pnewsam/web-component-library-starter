@@ -1,10 +1,6 @@
-import { LitElement, html } from "lit-element";
+import { LitElement, html } from 'lit-element';
 
-export class XIcon extends LitElement {
-  constructor() {
-    super();
-  }
-
+class XIcon extends LitElement {
   render() {
     return html`
       <svg
@@ -28,4 +24,4 @@ export class XIcon extends LitElement {
   }
 }
 
-customElements.define("x-icon", XIcon);
+customElements.define('x-icon', XIcon);
