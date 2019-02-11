@@ -29,6 +29,7 @@ module.exports = {
         include: [
           path.join(commonPaths.rootPath, './src'),
           /\/node_modules\/lit-element/,
+          /\/node_modules\/lit-html/,
         ],
         use: { loader: 'babel-loader' },
       },
