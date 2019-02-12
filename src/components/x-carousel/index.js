@@ -4,7 +4,6 @@ import styles from './styles';
 @customElement('x-carousel')
 class XCarousel extends LitElement {
   @property({ type: Number }) currentPage = 0;
-  @property({ type: Array }) $assignedElements = null;
 
   static get styles() {
     return [styles];

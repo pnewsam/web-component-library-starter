@@ -1,5 +1,6 @@
 const webpackMerge = require('webpack-merge');
 const baseConfig = require('./webpack.base.js');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = webpackMerge(baseConfig, {
   mode: 'development',
@@ -19,4 +20,10 @@ module.exports = webpackMerge(baseConfig, {
   devServer: {
     contentBase: './build',
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+      filename: './index.html',
+    }),
+  ],
 });
