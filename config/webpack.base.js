@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const commonPaths = require('./commonPaths');
 
 module.exports = {
@@ -35,11 +34,5 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new webpack.ProgressPlugin(),
-    new HtmlWebpackPlugin({
-      template: './public/index.html',
-      filename: './index.html',
-    }),
-  ],
+  plugins: [new webpack.ProgressPlugin()],
 };
