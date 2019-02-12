@@ -5,6 +5,5 @@ import '@webcomponents/webcomponentsjs';
 // Import all components here.
 import './components/x-carousel';
 import './components/x-carousel-page';
-import './components/x-header';
 import './components/x-icon';
 import './components/x-image';
