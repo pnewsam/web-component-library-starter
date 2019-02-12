@@ -1,0 +1,7 @@
+// Necessary to dismiss VSCode lint warnings about class properties and decorators.
+
+{
+  "compilerOptions": {
+    "experimentalDecorators": true
+  }
+}
