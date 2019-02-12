@@ -1,5 +1,6 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, html, customElement } from 'lit-element';
 
+@customElement('x-icon')
 class XIcon extends LitElement {
   render() {
     return html`
@@ -23,5 +24,3 @@ class XIcon extends LitElement {
     `;
   }
 }
-
-customElements.define('x-icon', XIcon);

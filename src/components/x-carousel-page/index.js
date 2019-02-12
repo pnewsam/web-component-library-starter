@@ -18,7 +18,6 @@ class XCarouselPage extends LitElement {
     return html`
       <h3>${this.headerText}</h3>
       <p>${this.bodyText}</p>
-      <slot />
     `;
   }
 }

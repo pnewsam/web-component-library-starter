@@ -1,6 +1,7 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, customElement, html } from 'lit-element';
 import sampleImage from '../../images/sample-image.jpg';
 
+@customElement('x-image')
 class XImage extends LitElement {
   render() {
     return html`
@@ -8,5 +9,3 @@ class XImage extends LitElement {
     `;
   }
 }
-
-customElements.define('x-image', XImage);
