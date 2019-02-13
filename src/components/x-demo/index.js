@@ -1,5 +1,7 @@
 import { html, css, LitElement, property, customElement } from 'lit-element';
 import styles from './styles';
+// import '../x-dropdown';
+// import '../x-dropdown-item';
 
 class XDemo extends LitElement {
   constructor() {

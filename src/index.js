@@ -9,4 +9,4 @@ import './components/x-icon';
 import './components/x-image';
 import './components/x-dropdown';
 import './components/x-dropdown-item';
-// import './components/x-demo';
+import './components/x-demo';

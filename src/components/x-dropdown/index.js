@@ -42,13 +42,11 @@ class XDropdown extends LitElement {
   }
 
   _toggleButton = (e) => {
-    console.log('toggle')
+    e.stopPropagation();
     this.active = !this.active;
   }
 
   handleClickOutside = (e) => {
-    e.preventDefault();
-
     if(e.target !== this) {
       this.active = false;
     }
