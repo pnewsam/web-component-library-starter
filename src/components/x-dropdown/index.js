@@ -44,7 +44,7 @@ class XDropdown extends LitElement {
     ${this.items.map((item, index) => html`
       <x-dropdown-item
         text=${item.text}
-        link="https://google.com">
+        link=${item.link}>
       </x-dropdown-item>`
     )}
     </div>

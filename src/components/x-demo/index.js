@@ -13,10 +13,15 @@ class XDemo extends LitElement {
 
   render() {
     return html`
-    <div>
-      <x-dropdown .items=${dropdownItems} text="Switch accounts">
-      </x-dropdown>
-    </div>
+    <!-- passing a data set -->
+    <x-dropdown .items=${dropdownItems} text="Switch accounts"></x-dropdown>
+
+    <!-- component composition -->
+    <!-- <x-dropdown text="Switch accounts">
+      <x-dropdown-item text="All Messages" link="https://google.com"></x-dropdown-item>
+      <x-dropdown-item text="Unread" link="https://google.com"></x-dropdown-item>
+      <x-dropdown-item text="Starred" link="https://google.com"></x-dropdown-item>
+    </x-dropdown> -->
     `;
   }
 }

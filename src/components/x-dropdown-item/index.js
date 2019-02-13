@@ -33,7 +33,7 @@ class XDropdownItem extends LitElement {
   }
 
   _handleClick = (e) => {
-    console.log('link clicked')
+    console.log(`clicked link ${this.link}`)
   }
 }
 
