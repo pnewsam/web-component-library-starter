@@ -7,3 +7,6 @@ import './components/x-carousel';
 import './components/x-carousel-page';
 import './components/x-icon';
 import './components/x-image';
+import './components/x-dropdown';
+import './components/x-dropdown-item';
+// import './components/x-demo';
