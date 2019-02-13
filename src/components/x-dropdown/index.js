@@ -1,4 +1,4 @@
-import { html, css, LitElement, property, customElement } from 'lit-element';
+import { html, LitElement} from 'lit-element';
 import styles from './styles';
 
 class XDropdown extends LitElement {
@@ -11,6 +11,10 @@ class XDropdown extends LitElement {
       active: {
         type: Boolean,
         reflect: true
+      },
+      items: {
+        type: Array,
+        reflect: true
       }
     }
   }
@@ -19,6 +23,7 @@ class XDropdown extends LitElement {
     super();
     this.text = '';
     this.active = true;
+    this.items = []
 
     window.addEventListener('click', (e) => {
       this.handleClickOutside(e);
@@ -36,7 +41,12 @@ class XDropdown extends LitElement {
       <div class="down-arrow">▾</div>
     </div>
     <div class=${this.active ? 'dropdown-content active' : 'dropdown-content'}>
-      <slot></slot>
+    ${this.items.map((item, index) => html`
+      <x-dropdown-item
+        text=${item.text}
+        link="https://google.com">
+      </x-dropdown-item>`
+    )}
     </div>
     `;
   }

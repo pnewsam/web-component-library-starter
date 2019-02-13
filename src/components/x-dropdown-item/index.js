@@ -1,4 +1,4 @@
-import { html, css, LitElement, property, customElement } from 'lit-element';
+import { html, LitElement} from 'lit-element';
 import styles from './styles';
 
 class XDropdownItem extends LitElement {
@@ -33,7 +33,6 @@ class XDropdownItem extends LitElement {
   }
 
   _handleClick = (e) => {
-    e.preventDefault()
     console.log('link clicked')
   }
 }
