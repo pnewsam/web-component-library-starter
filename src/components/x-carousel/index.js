@@ -9,50 +9,38 @@ class XCarousel extends LitElement {
     return [styles];
   }
 
+  // Lifecycle Methods
   firstUpdated() {
     this.$slot = this.shadowRoot.querySelector('slot');
     this.$assignedElements = this.$slot.assignedElements();
     this.$nav = this.shadowRoot.querySelector('.nav');
-
-    this._createDots();
-  }
-
-  _createDots() {
-    this.$assignedElements.forEach((_, idx) => {
-      const el = document.createElement('div');
-      el.setAttribute('class', 'dot');
-      el.setAttribute('id', `dot-${idx}`);
-      el.addEventListener('click', e => {
-        this.currentPage = idx;
-        this.requestUpdate();
-      });
-      this.$nav.appendChild(el);
-    });
-  }
-
-  _showCorrectPage() {
-    if (this.$assignedElements) {
-      this.$assignedElements.forEach(el => {
-        el.classList.add('hidden');
-      });
-      this.$assignedElements[this.currentPage].classList.remove('hidden');
-      this._fillCorrectDot();
-    }
-  }
-
-  _fillCorrectDot() {
-    this.$dots = this.shadowRoot.querySelectorAll('.dot');
-    this.$dots.forEach(dot => {
-      dot.classList.remove('filled');
-    });
-    const currentDot = this.shadowRoot.querySelector(
-      `#dot-${this.currentPage}`,
-    );
-    currentDot.classList.add('filled');
+    this.requestUpdate();
   }
 
   updated() {
-    this._showCorrectPage();
+    if (this.$assignedElements) this._showCurrentPage();
+  }
+
+  // Private Methods
+  _showCurrentPage() {
+    this.$assignedElements.forEach(el => {
+      el.classList.add('hidden');
+    });
+    this.$assignedElements[this.currentPage].classList.remove('hidden');
+  }
+
+  _dotTemplate(n) {
+    const classes = n == this.currentPage ? 'dot filled' : 'dot';
+    return html`
+      <div
+        class=${classes}
+        id="dot-${n}"
+        @click="${_ => {
+          this.currentPage = n;
+          this.requestUpdate();
+        }}"
+      ></div>
+    `;
   }
 
   render() {
@@ -60,7 +48,10 @@ class XCarousel extends LitElement {
       <div class="content">
         <slot></slot>
       </div>
-      <div class="nav"></div>
+      <div class="nav">
+        ${this.$assignedElements &&
+          this.$assignedElements.map((_, idx) => this._dotTemplate(idx))}
+      </div>
     `;
   }
 }
